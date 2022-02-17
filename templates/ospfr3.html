@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+<div class="container">
+    <h1>Login credentials for R3</h1>
+    <br>
+    <form action="/configr4" method="post">
+      <input type="text" placeholder="IP address" name="ipadr3" value="{{
+        request.form.ipadr3 }}">
+      <input type="text" placeholder="Username" name="username3" value="{{
+        request.form.username3 }}">
+       <input type="password" placeholder="Password" name="password3" value="{{
+        request.form.password3 }}">
+        <h3>OSPF Information for R3</h3>
+        <input type="number" placeholder="ospf pid" name="pid3" value="{{
+          request.form.pid3 }}">
+          <input type="text" placeholder="network adv 1" name="net3" value="{{
+            request.form.net3 }}">
+          <input type="number" placeholder="ospf aid" name="aid3" value="{{
+              request.form.aid3 }}">
+        <input type="text" placeholder="loopback" name="loopback3" value="{{
+          request.form.loopback3 }}">
+          
+      <input class="btn btn-default" type="submit" value="Submit">
+    </form>
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+  </div>
+</body>
+</html>

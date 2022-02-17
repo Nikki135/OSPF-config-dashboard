@@ -1,0 +1,36 @@
+<html>
+<body>
+<div class="container">
+  <h1>Login credentials for R4</h1>
+  <br>
+  <form action="/configured" method="post">
+    <input type="text" placeholder="ip address" name="ipadr4" value="{{
+      request.form.ipadr4 }}">
+    <input type="text" placeholder="Username" name="username4" value="{{
+      request.form.username4 }}">
+     <input type="password" placeholder="Password" name="password4" value="{{
+      request.form.password4 }}">
+      <h3>OSPF Information for R4</h3>
+      <input type="number" placeholder="ospf pid" name="pid4" value="{{
+        request.form.pid4 }}">
+        <input type="text" placeholder="network adv 1" name="net41" value="{{
+          request.form.net41 }}">
+        <input type="text" placeholder="network adv 2" name="net42" value="{{
+            request.form.net42 }}">
+            <input type="number" placeholder="ospf aid for network 1" name="aid41" value="{{
+              request.form.aid41 }}">
+          <input type="number" placeholder="ospf aid for network 2" name="aid42" value="{{
+                request.form.aid42 }}">
+        <!-- <input type="number" placeholder="ospf aid" name="aid4" value="{{
+            request.form.aid4 }}"> -->
+      <input type="text" placeholder="loopback" name="loopback4" value="{{
+        request.form.loopback4 }}">
+        
+    <input class="btn btn-default" type="submit" value="Submit">
+  </form>
+  {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+  {% endif %}
+</div>
+</body>
+</html>
